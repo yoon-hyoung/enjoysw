@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Login {
 
-	private int login_status; // °ªÀÌ 0ÀÌ¸é stduent, 1ÀÌ¸é staff·Î Á¤ÇÑ´Ù.
+	private int login_status; // ê°’ì´ 0ì´ë©´ stduent, 1ì´ë©´ staffë¡œ ì •í•œë‹¤.
 
 	public int getLogin_status() {
 		return login_status;
@@ -32,117 +32,117 @@ public class Login {
 		Scanner input = new Scanner(System.in);
 		String cnt;
 
-		String inputID; // »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹Ş´Â ID
-		String PW = null; // ÆÄÀÏ ³»¿¡¼­ ÀĞ´Â ºñ¹Ğ¹øÈ£
-		String inputPW; // »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹Ş´Â PW
+		String inputID; // ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ë°›ëŠ” ID
+		String PW = null; // íŒŒì¼ ë‚´ì—ì„œ ì½ëŠ” ë¹„ë°€ë²ˆí˜¸
+		String inputPW; // ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ë°›ëŠ” PW
 		boolean loop = true;
 		
 		boolean loop2 = true;
 
 		while(loop) {
-			System.out.print("\n¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-			System.out.printf("%65s\n", "¡Ú È­¸ñÇÑ ¼Ò¼³ ÆÀ (7Á¶) ^0^¡Ú ");
-			System.out.printf("%60s\n", "¡Ú¡Ú ÇØ¿ÜÀÎÅÏ½± ½ÅÃ» ½Ã½ºÅÛ ¡Ú¡Ú");
-			System.out.print("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
-			System.out.printf("%45s","[¾È³»] ÇÁ·Î±×·¥À» Á¾·áÇÏ½Ã·Á¸é X ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.\n");
+			System.out.print("\nâ”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+			System.out.printf("%65s\n", "â˜… í™”ëª©í•œ ì†Œì„¤ íŒ€ (7ì¡°) ^0^â˜… ");
+			System.out.printf("%60s\n", "â˜…â˜… í•´ì™¸ì¸í„´ì‰½ ì‹ ì²­ ì‹œìŠ¤í…œ â˜…â˜…");
+			System.out.print("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
+			System.out.printf("%45s","[ì•ˆë‚´] í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•˜ì‹œë ¤ë©´ X ë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n");
 			System.out.print("====================================================================\n");
-			System.out.print("¢º¢º  [ÇĞ»ı·Î±×ÀÎ : 0 ÀÔ·Â]  [Á÷¿ø·Î±×ÀÎ : 1 ÀÔ·Â] >>>> ");
+			System.out.print("â–¶â–¶  [í•™ìƒë¡œê·¸ì¸ : 0 ì…ë ¥]  [ì§ì›ë¡œê·¸ì¸ : 1 ì…ë ¥] >>>> ");
 			cnt = input.next();
 			
 			if(cnt.equals("X")) System.exit(0);
 			
 			setLogin_status(Integer.parseInt(cnt));
 			
-			if (login_status == 0) // ÇĞ»ı·Î±×ÀÎÀÏ °æ¿ì
+			if (login_status == 0) // í•™ìƒë¡œê·¸ì¸ì¼ ê²½ìš°
 			{
 				while(loop2) {
 					
 					System.out.println("---------------------------------------------------------------------------");
-					System.out.println("[System] ÇĞ»ı·Î±×ÀÎÀ» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù. (Ã³À½À¸·Î µ¹¾Æ°¡·Á¸é X ÀÔ·Â)");
+					System.out.println("[System] í•™ìƒë¡œê·¸ì¸ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤. (ì²˜ìŒìœ¼ë¡œ ëŒì•„ê°€ë ¤ë©´ X ì…ë ¥)");
 					System.out.println("====================================================================");
-					System.out.print("¢º¢º ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä. >>>> ");
+					System.out.print("â–¶â–¶ ì•„ì´ë””ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”. >>>> ");
 
 					inputID = input.next();
 					
-					/*   homeÀ¸·Î µÇµ¹¾Æ°¡´Â ÄÚµå(°øÅë)   */
+					/*   homeìœ¼ë¡œ ë˜ëŒì•„ê°€ëŠ” ì½”ë“œ(ê³µí†µ)   */
 					if(inputID.equals("X")) break;
 					/*        /////////////       */
 					
-					file = new File("./login_info/"+inputID+".txt");// login_info µğ·ºÅä¸® ¹ØÀÇ ID.txt¸¦ ÀĞ´Â´Ù.
+					file = new File("./login_info/"+inputID+".txt");// login_info ë””ë ‰í† ë¦¬ ë°‘ì˜ ID.txtë¥¼ ì½ëŠ”ë‹¤.
 					try {
 						filereader = new FileReader(file);
 					} catch (FileNotFoundException e) {
 						// TODO Auto-generated catch block
-						System.out.print("[System] µî·ÏµÇÁö ¾ÊÀº IDÀÔ´Ï´Ù. \n");
-						continue; // ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ´Â °÷ºÎÅÍ ½ÃÀÛÇÏ¶ó.
-					} // ÀÔ·Â ½ºÆ®¸² »ı¼º
+						System.out.print("[System] ë“±ë¡ë˜ì§€ ì•Šì€ IDì…ë‹ˆë‹¤. \n");
+						continue; // ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ëŠ” ê³³ë¶€í„° ì‹œì‘í•˜ë¼.
+					} // ì…ë ¥ ìŠ¤íŠ¸ë¦¼ ìƒì„±
 
 
-					bufreader = new BufferedReader(filereader); // ÀÔ·Â ¹öÆÛ »ı¼º
+					bufreader = new BufferedReader(filereader); // ì…ë ¥ ë²„í¼ ìƒì„±
 
 					String job = "";
 					try {
 						job = bufreader.readLine();
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
-						System.err.print("[System] µî·ÏµÈ ³»¿ëÀÌ ¾ø½À´Ï´Ù. ");
+						System.err.print("[System] ë“±ë¡ëœ ë‚´ìš©ì´ ì—†ìŠµë‹ˆë‹¤. ");
 						System.exit(1);
-					} // ÆÄÀÏ ³»¿¡¼­ studentÀÎÁö, adminÀÎÁö ´Ù½Ã ÇÑ¹ø Ã¹ ÁÙ·ÎºÎÅÍ ¹Ş´Â´Ù.
+					} // íŒŒì¼ ë‚´ì—ì„œ studentì¸ì§€, adminì¸ì§€ ë‹¤ì‹œ í•œë²ˆ ì²« ì¤„ë¡œë¶€í„° ë°›ëŠ”ë‹¤.
 
 
 					if ( !job.equals("student") ) {
-						System.out.println("[System] ÇĞ»ıÀ¸·Î µî·ÏµÈ ID°¡ ¾Æ´Õ´Ï´Ù.");
+						System.out.println("[System] í•™ìƒìœ¼ë¡œ ë“±ë¡ëœ IDê°€ ì•„ë‹™ë‹ˆë‹¤.");
 						continue;
 					}
 
-					else { // ÆÄÀÏ ³»¿¡¼­ ´Ù½Ã ÇÑ ¹ø ÇĞ»ıÀÓÀÌ È®ÀÎµÇ¾úÀ¸¸é
+					else { // íŒŒì¼ ë‚´ì—ì„œ ë‹¤ì‹œ í•œ ë²ˆ í•™ìƒì„ì´ í™•ì¸ë˜ì—ˆìœ¼ë©´
 						try {
 							PW = bufreader.readLine();
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
-							System.err.print("[System] µî·ÏµÈ ³»¿ëÀÌ ¾ø½À´Ï´Ù. ");
+							System.err.print("[System] ë“±ë¡ëœ ë‚´ìš©ì´ ì—†ìŠµë‹ˆë‹¤. ");
 							System.exit(1);
 						}
 
-						System.out.print("¢º¢º ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä. >>>> ");
-						inputPW = input.next(); // »ç¿ëÀÚ·ÎºÎÅÍ ÆĞ½º¿öµå¸¦ ÀÔ·Â¹Ş´Â´Ù.
+						System.out.print("â–¶â–¶ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”. >>>> ");
+						inputPW = input.next(); // ì‚¬ìš©ìë¡œë¶€í„° íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥ë°›ëŠ”ë‹¤.
 						
-						/*   homeÀ¸·Î µÇµ¹¾Æ°¡´Â ÄÚµå(°øÅë)   */
+						/*   homeìœ¼ë¡œ ë˜ëŒì•„ê°€ëŠ” ì½”ë“œ(ê³µí†µ)   */
 						if(inputPW.equals("h")) break;
 						/*        /////////////       */
 
-						if ( !inputPW.equals(PW) ) { // ÆÄÀÏ¿¡ µî·ÏµÈ ºñ¹Ğ¹øÈ£¿Í °°À¸¸é
-							System.out.println("[System] ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù. ´Ù½Ã ID ÀçÀÔ·ÂÀ» ¿äÃ»ÇÕ´Ï´Ù.\n");
+						if ( !inputPW.equals(PW) ) { // íŒŒì¼ì— ë“±ë¡ëœ ë¹„ë°€ë²ˆí˜¸ì™€ ê°™ìœ¼ë©´
+							System.out.println("[System] ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤. ë‹¤ì‹œ ID ì¬ì…ë ¥ì„ ìš”ì²­í•©ë‹ˆë‹¤.\n");
 							continue;	
 						}
 						else {
-							System.out.print("\n[Loading] ¡á");
+							System.out.print("\n[Loading] â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(80);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(80);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(70);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(60);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(50);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(40);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(30);
 							System.out.println(" - [100%] \n");
 							
-							System.out.println("[System] ·Î±×ÀÎ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù. " + inputID +"´Ô È¯¿µÇÕ´Ï´Ù!");
-							main.setID(inputID); // ID ³Ñ°ÜÁÖ±â
-							main.setStatus(0); // status ³Ñ°ÜÁÖ±â
+							System.out.println("[System] ë¡œê·¸ì¸ì— ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤. " + inputID +"ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!");
+							main.setID(inputID); // ID ë„˜ê²¨ì£¼ê¸°
+							main.setStatus(0); // status ë„˜ê²¨ì£¼ê¸°
 							loop = false;
 							loop2 = false;
 						}
@@ -151,95 +151,95 @@ public class Login {
 				}
 			}
 
-			else if (login_status == 1) // Á÷¿ø·Î±×ÀÎÀÏ °æ¿ì
+			else if (login_status == 1) // ì§ì›ë¡œê·¸ì¸ì¼ ê²½ìš°
 			{
 				while(loop2) {
 					
 					System.out.println("---------------------------------------------------------------------------");
-					System.out.println("[System] Á÷¿ø·Î±×ÀÎÀ» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù. (Ã³À½À¸·Î µ¹¾Æ°¡·Á¸é X ÀÔ·Â)");
+					System.out.println("[System] ì§ì›ë¡œê·¸ì¸ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤. (ì²˜ìŒìœ¼ë¡œ ëŒì•„ê°€ë ¤ë©´ X ì…ë ¥)");
 					System.out.println("====================================================================");
-					System.out.print("¢º¢º ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä. >>> ");
+					System.out.print("â–¶â–¶ ì•„ì´ë””ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”. >>> ");
 
 					inputID = input.next();
 					
-					/*   homeÀ¸·Î µÇµ¹¾Æ°¡´Â ÄÚµå(°øÅë)   */
+					/*   homeìœ¼ë¡œ ë˜ëŒì•„ê°€ëŠ” ì½”ë“œ(ê³µí†µ)   */
 					if(inputID.equals("X")) break;
 					/*        /////////////       */
 					
-					file = new File("./login_info/"+inputID+".txt");// login_info µğ·ºÅä¸® ¹ØÀÇ ID.txt¸¦ ÀĞ´Â´Ù.
+					file = new File("./login_info/"+inputID+".txt");// login_info ë””ë ‰í† ë¦¬ ë°‘ì˜ ID.txtë¥¼ ì½ëŠ”ë‹¤.
 					try {
 						filereader = new FileReader(file);
 					} catch (FileNotFoundException e) {
 						// TODO Auto-generated catch block
-						System.out.print("[System] µî·ÏµÇÁö ¾ÊÀº IDÀÔ´Ï´Ù. \n");
-						continue; // ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ´Â °÷ºÎÅÍ ½ÃÀÛÇÏ¶ó.
-					} // ÀÔ·Â ½ºÆ®¸² »ı¼º
+						System.out.print("[System] ë“±ë¡ë˜ì§€ ì•Šì€ IDì…ë‹ˆë‹¤. \n");
+						continue; // ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ëŠ” ê³³ë¶€í„° ì‹œì‘í•˜ë¼.
+					} // ì…ë ¥ ìŠ¤íŠ¸ë¦¼ ìƒì„±
 
 
-					bufreader = new BufferedReader(filereader); // ÀÔ·Â ¹öÆÛ »ı¼º
+					bufreader = new BufferedReader(filereader); // ì…ë ¥ ë²„í¼ ìƒì„±
 
 					String job = "";
 					try {
 						job = bufreader.readLine();
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
-						System.err.print("[System] µî·ÏµÈ ³»¿ëÀÌ ¾ø½À´Ï´Ù. ");
+						System.err.print("[System] ë“±ë¡ëœ ë‚´ìš©ì´ ì—†ìŠµë‹ˆë‹¤. ");
 						System.exit(1);
-					} // ÆÄÀÏ ³»¿¡¼­ studentÀÎÁö, adminÀÎÁö ´Ù½Ã ÇÑ¹ø Ã¹ ÁÙ·ÎºÎÅÍ ¹Ş´Â´Ù.
+					} // íŒŒì¼ ë‚´ì—ì„œ studentì¸ì§€, adminì¸ì§€ ë‹¤ì‹œ í•œë²ˆ ì²« ì¤„ë¡œë¶€í„° ë°›ëŠ”ë‹¤.
 
 
 					if ( !job.equals("admin") ) {
-						System.out.println("°ü¸®ÀÚ·Î µî·ÏµÈ ID°¡ ¾Æ´Õ´Ï´Ù.");
+						System.out.println("ê´€ë¦¬ìë¡œ ë“±ë¡ëœ IDê°€ ì•„ë‹™ë‹ˆë‹¤.");
 						continue;
 					}
 
-					else { // ÆÄÀÏ ³»¿¡¼­ ´Ù½Ã ÇÑ ¹ø °ü¸®ÀÚÀÓÀÌ È®ÀÎµÇ¾úÀ¸¸é
+					else { // íŒŒì¼ ë‚´ì—ì„œ ë‹¤ì‹œ í•œ ë²ˆ ê´€ë¦¬ìì„ì´ í™•ì¸ë˜ì—ˆìœ¼ë©´
 						try {
 							PW = bufreader.readLine();
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
-							System.err.print("[System] µî·ÏµÈ ³»¿ëÀÌ ¾ø½À´Ï´Ù. ");
+							System.err.print("[System] ë“±ë¡ëœ ë‚´ìš©ì´ ì—†ìŠµë‹ˆë‹¤. ");
 							System.exit(1);
 						}
 
-						System.out.print("¢º¢º ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä. >>> ");
-						inputPW = input.next(); // »ç¿ëÀÚ·ÎºÎÅÍ ÆĞ½º¿öµå¸¦ ÀÔ·Â¹Ş´Â´Ù.
+						System.out.print("â–¶â–¶ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”. >>> ");
+						inputPW = input.next(); // ì‚¬ìš©ìë¡œë¶€í„° íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥ë°›ëŠ”ë‹¤.
 						
-						/*   homeÀ¸·Î µÇµ¹¾Æ°¡´Â ÄÚµå(°øÅë)   */
+						/*   homeìœ¼ë¡œ ë˜ëŒì•„ê°€ëŠ” ì½”ë“œ(ê³µí†µ)   */
 						if(inputPW.equals("h")) break;
 						/*        /////////////       */
 
-						if ( !inputPW.equals(PW) ) { // ÆÄÀÏ¿¡ µî·ÏµÈ ºñ¹Ğ¹øÈ£¿Í °°À¸¸é
-							System.out.print("[System] ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù. ´Ù½Ã ID ÀçÀÔ·ÂÀ» ¿äÃ»ÇÕ´Ï´Ù.\n");
+						if ( !inputPW.equals(PW) ) { // íŒŒì¼ì— ë“±ë¡ëœ ë¹„ë°€ë²ˆí˜¸ì™€ ê°™ìœ¼ë©´
+							System.out.print("[System] ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤. ë‹¤ì‹œ ID ì¬ì…ë ¥ì„ ìš”ì²­í•©ë‹ˆë‹¤.\n");
 							continue;	
 						}
 						else {
-							System.out.print("\n[Loading] ¡á");
+							System.out.print("\n[Loading] â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(100);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(80);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(80);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(70);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(60);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(50);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(40);
-							System.out.print("¡á");
+							System.out.print("â– ");
 							Thread.sleep(30);
 							System.out.println(" - [100%] \n");
-							System.out.println("[System] ·Î±×ÀÎ¿¡ ¼º°øÇÏ¿´½À´Ï´Ù. °ü¸®ÀÚ ¸ğµå¸¦ ½ÃÀÛÇÕ´Ï´Ù.");
-							main.setID(inputID); // ID ³Ñ°ÜÁÖ±â
-							main.setStatus(1); // status ³Ñ°ÜÁÖ±â
+							System.out.println("[System] ë¡œê·¸ì¸ì— ì„±ê³µí•˜ì˜€ìŠµë‹ˆë‹¤. ê´€ë¦¬ì ëª¨ë“œë¥¼ ì‹œì‘í•©ë‹ˆë‹¤.");
+							main.setID(inputID); // ID ë„˜ê²¨ì£¼ê¸°
+							main.setStatus(1); // status ë„˜ê²¨ì£¼ê¸°
 							loop = false;
 							loop2 = false;
 						}

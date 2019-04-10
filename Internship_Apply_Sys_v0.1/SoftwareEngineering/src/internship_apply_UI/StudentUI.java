@@ -20,7 +20,7 @@ public class StudentUI {
 		student_UI();
 	}
 
-	public void student_UI() throws IOException { // ÇĞ»ı UI... ¸Ş´º Ãâ·Â
+	public void student_UI() throws IOException { // í•™ìƒ UI... ë©”ë‰´ ì¶œë ¥
 		Main main = new Main();
 		Scanner input = new Scanner(System.in);
 		int input_num;
@@ -29,52 +29,52 @@ public class StudentUI {
 		while(true) {
 			System.out.println("\n\n");
 			System.out.println("-------------------------------< SELECT MENU >---------------------------");
-			System.out.printf("%10s  %10s  %10s  %10s\n", "[°³ÀÎÁ¤º¸ Ãâ·Â : 1]", "[¼­·ù °ü¸® : 2]", "[°³ÀÎÁ¤º¸ ¼öÁ¤ : 3]", "[ÀÎÅÏ½± ¸ğÀÇ Áö¿ø : 4]");
-			System.out.printf("%10s  %10s  %10s  %10s\n", "[¸ğµç ÀÎÅÏ½± Á¶È¸ : 5]", "[°ü½É ÀÎÅÏ½± °ü¸® : 6]", "[ÀÎÅÏ½± ½ÅÃ» : 7]", "[½ÅÃ» ÀÎÅÏ½± °ü¸® : 8]");
-			System.out.printf("[ ¸®ºä°ü¸® : 9]\n");
+			System.out.printf("%10s  %10s  %10s  %10s\n", "[ê°œì¸ì •ë³´ ì¶œë ¥ : 1]", "[ì„œë¥˜ ê´€ë¦¬ : 2]", "[ê°œì¸ì •ë³´ ìˆ˜ì • : 3]", "[ì¸í„´ì‰½ ëª¨ì˜ ì§€ì› : 4]");
+			System.out.printf("%10s  %10s  %10s  %10s\n", "[ëª¨ë“  ì¸í„´ì‰½ ì¡°íšŒ : 5]", "[ê´€ì‹¬ ì¸í„´ì‰½ ê´€ë¦¬ : 6]", "[ì¸í„´ì‰½ ì‹ ì²­ : 7]", "[ì‹ ì²­ ì¸í„´ì‰½ ê´€ë¦¬ : 8]");
+			System.out.printf("[ ë¦¬ë·°ê´€ë¦¬ : 9]\n");
 			System.out.println("----------------------------------------------------------------------------");
-			System.out.println("[¾È³»] ·Î±×¾Æ¿ôÀ» ÇÏ½Ã·Á¸é ¼ıÀÚ 0 À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
-			System.out.print("¢º¢º ¿øÇÏ½Ã´Â ¸Ş´ºÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä. : ");
+			System.out.println("[ì•ˆë‚´] ë¡œê·¸ì•„ì›ƒì„ í•˜ì‹œë ¤ë©´ ìˆ«ì 0 ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
+			System.out.print("â–¶â–¶ ì›í•˜ì‹œëŠ” ë©”ë‰´ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”. : ");
 			input_num=input.nextInt();
 			
 			if ( input_num == 0 ) {
 				return;
 			}
 
-			else if ( input_num == 1 ) { //°³ÀÎÁ¤º¸ Ãâ·Â1
+			else if ( input_num == 1 ) { //ê°œì¸ì •ë³´ ì¶œë ¥1
 				s.print_info();
 			}
 
-			else if ( input_num == 2 ) {//¼­·ù µî·Ï1
+			else if ( input_num == 2 ) {//ì„œë¥˜ ë“±ë¡1
 				DocumentManager();
 			}
 
-			else if ( input_num == 3 ) {//°³ÀÎÁ¤º¸ ¼öÁ¤1
+			else if ( input_num == 3 ) {//ê°œì¸ì •ë³´ ìˆ˜ì •1
 				s.edit_info();
 			}
 
-			else if ( input_num == 4 ) {//ÀÎÅÏ½± ¸ğÀÇ Áö¿ø1
+			else if ( input_num == 4 ) {//ì¸í„´ì‰½ ëª¨ì˜ ì§€ì›1
 				//print_internship_list();
 				s.apply_Simulation_intern();
 
 			}
-			else if ( input_num == 5 ) {//¸ğµç ÀÎÅÏ½± Á¶È¸1
+			else if ( input_num == 5 ) {//ëª¨ë“  ì¸í„´ì‰½ ì¡°íšŒ1
 				
 				add_interesting_internship();
 
 			}
-			else if ( input_num == 6 ) {//°ü½É ÀÎÅÏ½± °ü¸®1
+			else if ( input_num == 6 ) {//ê´€ì‹¬ ì¸í„´ì‰½ ê´€ë¦¬1
 				print_interestingInternship();
 
 			}
-			else if ( input_num == 7 ) {//ÀÎÅÏ½± ½ÅÃ»ÇÏ±â
+			else if ( input_num == 7 ) {//ì¸í„´ì‰½ ì‹ ì²­í•˜ê¸°
 				s.apply_intern();
 
 			}
-			else if ( input_num == 8 ) {//ÀÎÅÏ½± °ü¸®ÇÏ±â
+			else if ( input_num == 8 ) {//ì¸í„´ì‰½ ê´€ë¦¬í•˜ê¸°
 				s.setting_intern();
 			}
-			else if (input_num == 9) {//¸®ºäÀÛ¼º
+			else if (input_num == 9) {//ë¦¬ë·°ì‘ì„±
 				Review review = new Review();
 				review.review_execute();
 			}
@@ -85,10 +85,10 @@ public class StudentUI {
 	public void DocumentManager() {
 		System.out.println("\n");
 		//System.out.println("----------------------------------------------------------------------------");
-		System.out.println("----------------------------¼­·ù °ü¸® ¸Ş´ºÀÔ´Ï´Ù------------------------------");
-		System.out.println("ÇöÀç °¡Áö°í ÀÖ´Â ¼­·ù ¸ñ·ÏÀÔ´Ï´Ù.");
+		System.out.println("----------------------------ì„œë¥˜ ê´€ë¦¬ ë©”ë‰´ì…ë‹ˆë‹¤------------------------------");
+		System.out.println("í˜„ì¬ ê°€ì§€ê³  ìˆëŠ” ì„œë¥˜ ëª©ë¡ì…ë‹ˆë‹¤.");
 		docu.PrintDocumentList();
-		System.out.print("¢º¢º ¿øÇÏ½Ã´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä. [µî·Ï : 1] [»èÁ¦ : 2] (0À» ÀÔ·Â ½Ã SKIP) >>> ");
+		System.out.print("â–¶â–¶ ì›í•˜ì‹œëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”. [ë“±ë¡ : 1] [ì‚­ì œ : 2] (0ì„ ì…ë ¥ ì‹œ SKIP) >>> ");
 		Scanner input1 = new Scanner(System.in);
 		int flag = input1.nextInt();
 		switch(flag){
@@ -101,7 +101,7 @@ public class StudentUI {
 			docu.DelDocument();
 			break;
 			default :
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				System.out.println("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 				
 		}
 	}
@@ -123,9 +123,9 @@ public class StudentUI {
 		}
 
 		System.out.println("");
-		System.out.println("---------------------------¸ğµç ÀÎÅÏ½±À» Ãâ·ÂÇÕ´Ï´Ù----------------------------");
-		System.out.printf("%s %s %s %s %s %s %s %s %s %s\n", "[INDEX]","[ÀÎÅÏ½± ÀÌ¸§]","[ÀÎÅÏ½± µî·ÏÀÏ]", "[½ÃÇà ±â¾÷]", "[ÀÎÅÏ½± ±â°£]",
-					"[¼±¹ß ÀÏÀÚ]", "[¸ğÁı ÀÎ¿ø]", "[¸ğÁı ±¹°¡]", "[¸ğÁı Àü°ø]", "[½ÃÇàÃ³]");
+		System.out.println("---------------------------ëª¨ë“  ì¸í„´ì‰½ì„ ì¶œë ¥í•©ë‹ˆë‹¤----------------------------");
+		System.out.printf("%s %s %s %s %s %s %s %s %s %s\n", "[INDEX]","[ì¸í„´ì‰½ ì´ë¦„]","[ì¸í„´ì‰½ ë“±ë¡ì¼]", "[ì‹œí–‰ ê¸°ì—…]", "[ì¸í„´ì‰½ ê¸°ê°„]",
+					"[ì„ ë°œ ì¼ì]", "[ëª¨ì§‘ ì¸ì›]", "[ëª¨ì§‘ êµ­ê°€]", "[ëª¨ì§‘ ì „ê³µ]", "[ì‹œí–‰ì²˜]");
 		for(int j= 0; j<i; j++) {
 			System.out.printf(" [%d] %s / %d / %s / %s / %s / %s / %s / %s / %s\n",
 					j+1, internship[j].getname(),internship[j].getdate(),internship[j].getcompany(),
@@ -152,9 +152,9 @@ public class StudentUI {
 		}
 
 		System.out.println("");
-		System.out.println("---------------------------ÀüÃ¼ ÀÎÅÏ½± ¸ñ·ÏÀÔ´Ï´Ù----------------------------");
-		System.out.printf("%s %s %s %s %s %s %s %s %s %s\n", "[INDEX]","[ÀÎÅÏ½± ÀÌ¸§]","[ÀÎÅÏ½± µî·ÏÀÏ]", "[½ÃÇà ±â¾÷]", "[ÀÎÅÏ½± ±â°£]",
-					"[¼±¹ß ÀÏÀÚ]", "[¸ğÁı ÀÎ¿ø]", "[¸ğÁı ±¹°¡]", "[¸ğÁı Àü°ø]", "[½ÃÇàÃ³]");
+		System.out.println("---------------------------ì „ì²´ ì¸í„´ì‰½ ëª©ë¡ì…ë‹ˆë‹¤----------------------------");
+		System.out.printf("%s %s %s %s %s %s %s %s %s %s\n", "[INDEX]","[ì¸í„´ì‰½ ì´ë¦„]","[ì¸í„´ì‰½ ë“±ë¡ì¼]", "[ì‹œí–‰ ê¸°ì—…]", "[ì¸í„´ì‰½ ê¸°ê°„]",
+					"[ì„ ë°œ ì¼ì]", "[ëª¨ì§‘ ì¸ì›]", "[ëª¨ì§‘ êµ­ê°€]", "[ëª¨ì§‘ ì „ê³µ]", "[ì‹œí–‰ì²˜]");
 		for(int j= 0; j<i; j++) {
 			System.out.printf(" [%d] %s / %d / %s / %s / %s / %s / %s / %s / %s\n",
 					j+1, internship[j].getname(),internship[j].getdate(),internship[j].getcompany(),
@@ -162,15 +162,15 @@ public class StudentUI {
 					internship[j].getnation(),internship[j].getmajor(),internship[j].gethost());
 		}
 		System.out.println("");
-		System.out.print("¢º¢º °ü½É ÀÎÅÏ½±À¸·Î µî·ÏÇÏ·Á´Â ÀÎÅÏ½±ÀÇ Index ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä. (0À» ÀÔ·Â ½Ã µî·ÏÇÏÁö ¾Ê°í SKIP) >>> ");
+		System.out.print("â–¶â–¶ ê´€ì‹¬ ì¸í„´ì‰½ìœ¼ë¡œ ë“±ë¡í•˜ë ¤ëŠ” ì¸í„´ì‰½ì˜ Index ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”. (0ì„ ì…ë ¥ ì‹œ ë“±ë¡í•˜ì§€ ì•Šê³  SKIP) >>> ");
 		indexNum = input.nextInt();
 		if (indexNum == 0)
 			;
 		else if(indexNum > i) {
-			System.out.print("[System] ¸ñ·Ï¿¡ ¾ø´Â INDEX¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");
+			System.out.print("[System] ëª©ë¡ì— ì—†ëŠ” INDEXë¥¼ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 			return;
 		}
-		// Student/ID/ ¹Ø¿¡ InterestedInternship Æú´õ¸¦ »ı¼ºÇÑ´Ù.
+		// Student/ID/ ë°‘ì— InterestedInternship í´ë”ë¥¼ ìƒì„±í•œë‹¤.
 		else if(indexNum != 0) {
 			InterestingInternship interestingInternship =
 					new InterestingInternship(s.getID(),internship[indexNum-1].getcompany(),indexNum,internship[indexNum-1].getname());

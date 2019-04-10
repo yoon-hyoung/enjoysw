@@ -6,14 +6,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class EvaluationItem { // Æò°¡¿¡ ÇÊ¿äÇÑ Ç×¸ñ Á¤º¸
+public class EvaluationItem { // í‰ê°€ì— í•„ìš”í•œ í•­ëª© ì •ë³´
 
-	private String grade; // ÇĞÁ¡
-	private int TOEIC; // ÅäÀÍÁ¡¼ö
-	private int langSch; // ¾îÇĞ¿ø ¼ö¾÷ ¿©ºÎ - 0ÀÌ¸é false, 1ÀÌ¸é true
-	private String cert; // ÄÄÇ»ÅÍ °ü·Ã ÀÚ°İÁõ Á¤º¸
-	private int oversea_exp; // ÇØ¿Ü °æÇè(±³È¯ÇĞ»ı, ÀÎÅÏ½±, ..) ¿©ºÎ - 0ÀÌ¸é f, 1ÀÌ¸é t
-	private String ID; // Student·ÎºÎÅÍ ÇöÀç ÇĞ»ıÀÇ ID¸¦ ÀúÀåÇÏ±â À§ÇÔ
+	private String grade; // í•™ì 
+	private int TOEIC; // í† ìµì ìˆ˜
+	private int langSch; // ì–´í•™ì› ìˆ˜ì—… ì—¬ë¶€ - 0ì´ë©´ false, 1ì´ë©´ true
+	private String cert; // ì»´í“¨í„° ê´€ë ¨ ìê²©ì¦ ì •ë³´
+	private int oversea_exp; // í•´ì™¸ ê²½í—˜(êµí™˜í•™ìƒ, ì¸í„´ì‰½, ..) ì—¬ë¶€ - 0ì´ë©´ f, 1ì´ë©´ t
+	private String ID; // Studentë¡œë¶€í„° í˜„ì¬ í•™ìƒì˜ IDë¥¼ ì €ì¥í•˜ê¸° ìœ„í•¨
 
 
 	public String getID() {
@@ -64,7 +64,7 @@ public class EvaluationItem { // Æò°¡¿¡ ÇÊ¿äÇÑ Ç×¸ñ Á¤º¸
 		this.oversea_exp = oversea_exp;
 	}
 
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public EvaluationItem() {
 		
 	}
@@ -72,21 +72,21 @@ public class EvaluationItem { // Æò°¡¿¡ ÇÊ¿äÇÑ Ç×¸ñ Á¤º¸
 		this.ID = ID;
 	}
 
-	public void Evaluation_regist() throws IOException { // Evaluation °ü·Ã Á¤º¸¸¦ µî·ÏÇÏ°í ¼öÁ¤ÇÏ´Â ¸Ş¼Òµå
+	public void Evaluation_regist() throws IOException { // Evaluation ê´€ë ¨ ì •ë³´ë¥¼ ë“±ë¡í•˜ê³  ìˆ˜ì •í•˜ëŠ” ë©”ì†Œë“œ
 		File file;
 		FileReader filereader = null;
 		BufferedReader bufreader;
 		file = new File("./Student/"+ID+"/evaluationitem.txt");
-		// Student/ID µğ·ºÅä¸®ÀÇ evaluationn.txt¸¦ ºÒ·¯¿Â´Ù.
+		// Student/ID ë””ë ‰í† ë¦¬ì˜ evaluationn.txtë¥¼ ë¶ˆëŸ¬ì˜¨ë‹¤.
 		try {
 			filereader = new FileReader(file);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.print("[System] µî·ÏµÇÁö ¾ÊÀº »ç¿ëÀÚÀÔ´Ï´Ù. \n");
+			System.out.print("[System] ë“±ë¡ë˜ì§€ ì•Šì€ ì‚¬ìš©ìì…ë‹ˆë‹¤. \n");
 		}
-		// ÀÔ·Â ½ºÆ®¸² »ı¼º
-		bufreader = new BufferedReader(filereader); // ÀÔ·Â ¹öÆÛ »ı¼º
-		// ÆÄÀÏ·ÎºÎÅÍ ÀĞ¾î¿À±â
+		// ì…ë ¥ ìŠ¤íŠ¸ë¦¼ ìƒì„±
+		bufreader = new BufferedReader(filereader); // ì…ë ¥ ë²„í¼ ìƒì„±
+		// íŒŒì¼ë¡œë¶€í„° ì½ì–´ì˜¤ê¸°
 		setGrade(bufreader.readLine());
 		setTOEIC(Integer.parseInt(bufreader.readLine()));
 		setLangSch(Integer.parseInt(bufreader.readLine()));
@@ -95,22 +95,22 @@ public class EvaluationItem { // Æò°¡¿¡ ÇÊ¿äÇÑ Ç×¸ñ Á¤º¸
 
 	}
 
-	public void Evaluation_print() { // Evaluation °ü·Ã Á¤º¸¸¦ Ãâ·ÂÇÑ´Ù.
+	public void Evaluation_print() { // Evaluation ê´€ë ¨ ì •ë³´ë¥¼ ì¶œë ¥í•œë‹¤.
 
-		System.out.println("ÇĞÁ¡ : "+getGrade());
-		System.out.println("ÅäÀÍ : "+getTOEIC()+"Á¡");
+		System.out.println("í•™ì  : "+getGrade());
+		System.out.println("í† ìµ : "+getTOEIC()+"ì ");
 
 		if(getLangSch()==0)
-			System.out.println("¾îÇĞ¿ø ¼ö¾÷ ¿©ºÎ : YES");
+			System.out.println("ì–´í•™ì› ìˆ˜ì—… ì—¬ë¶€ : YES");
 		else
-			System.out.println("¾îÇĞ¿ø ¼ö¾÷ ¿©ºÎ : NO");
+			System.out.println("ì–´í•™ì› ìˆ˜ì—… ì—¬ë¶€ : NO");
 
-		System.out.println("ÄÄÇ»ÅÍ °ü·Ã ÀÚ°İÁõ : "+getCert());
+		System.out.println("ì»´í“¨í„° ê´€ë ¨ ìê²©ì¦ : "+getCert());
 
 		if(getOversea_exp()==0)
-			System.out.println("ÇØ¿Ü °æÇè(±³È¯ÇĞ»ı,ÀÎÅÏ½± µî) : YES");
+			System.out.println("í•´ì™¸ ê²½í—˜(êµí™˜í•™ìƒ,ì¸í„´ì‰½ ë“±) : YES");
 		else
-			System.out.println("ÇØ¿Ü °æÇè(±³È¯ÇĞ»ı,ÀÎÅÏ½± µî) : NO");
+			System.out.println("í•´ì™¸ ê²½í—˜(êµí™˜í•™ìƒ,ì¸í„´ì‰½ ë“±) : NO");
 	}
 
 }

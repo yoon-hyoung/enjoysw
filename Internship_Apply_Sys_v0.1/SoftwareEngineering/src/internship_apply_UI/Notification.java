@@ -11,7 +11,7 @@ public class Notification {
 	
 	public void AllNoti(String name) {
 		System.out.println("====================================================================");
-		System.out.println("------------------------------[System ¾Ë¸²]--------------------------------");
+		System.out.println("------------------------------[System ì•Œë¦¼]--------------------------------");
 		passer(name);
 		NonRegistDocu(name);
 		interNoti(name);
@@ -46,8 +46,8 @@ public class Notification {
 					}
 				}
 			}
-			// Internship Æú´õ ¹Ø¿¡ Document Æú´õ·Î µé¾î°¡°í, Stduent/ID/Document Æú´õ·Î µé¾î°¡¼­, ¼­·Î ºñ±³Çß´Ù.
-			System.out.println("\n<System> Áö¿øÇÑ " + object + "¿¡ ºÎÁ·ÇÑ ¼­·ù ¸ñ·ÏÀÔ´Ï´Ù. >>");
+			// Internship í´ë” ë°‘ì— Document í´ë”ë¡œ ë“¤ì–´ê°€ê³ , Stduent/ID/Document í´ë”ë¡œ ë“¤ì–´ê°€ì„œ, ì„œë¡œ ë¹„êµí–ˆë‹¤.
+			System.out.println("\n<System> ì§€ì›í•œ " + object + "ì— ë¶€ì¡±í•œ ì„œë¥˜ ëª©ë¡ì…ë‹ˆë‹¤. >>");
 			System.out.println(intern);
 
 		}	
@@ -61,7 +61,7 @@ public class Notification {
 				Applied.add(f.getName());
 			}
 			
-			System.out.println("\n[System] ÇÕ°İÇÑ ÀÎÅÏ½± ¸ñ·ÏÀÔ´Ï´Ù. >>");
+			System.out.println("\n[System] í•©ê²©í•œ ì¸í„´ì‰½ ëª©ë¡ì…ë‹ˆë‹¤. >>");
 			for(Object object : Applied) {
 				try {
 				File file = new File("." + "/" + "Internship" + "/" + object +"/" + "Passer.txt");
@@ -80,9 +80,9 @@ public class Notification {
 			}
 	}
 	
-	// °ü½É ºĞ¾ß¸¦ ¾Ë·Á ÁÖ´Â ±×·±... (°ü½É ÀÎÅÏ½±°ú ´Ù¸§)
+	// ê´€ì‹¬ ë¶„ì•¼ë¥¼ ì•Œë ¤ ì£¼ëŠ” ê·¸ëŸ°... (ê´€ì‹¬ ì¸í„´ì‰½ê³¼ ë‹¤ë¦„)
 	public void interNoti(String name){
-		System.out.println("\n[System] °ü½ÉºĞ¾ß¿Í °ü·ÃµÈ ÀÎÅÏ½± ¸ñ·ÏÀÔ´Ï´Ù.>>");
+		System.out.println("\n[System] ê´€ì‹¬ë¶„ì•¼ì™€ ê´€ë ¨ëœ ì¸í„´ì‰½ ëª©ë¡ì…ë‹ˆë‹¤.>>");
 		File folder = new File("." + "/" + "Internship");
 		File[] list = folder.listFiles();
 		ArrayList Intern = new ArrayList();
@@ -98,13 +98,13 @@ public class Notification {
 		while((line1 = bufReader1.readLine())!= null){
 			switch(count) {
 			case 1:
-				System.out.print("[System] Áö¿ª" + "(" + line1 +") : ");
+				System.out.print("[System] ì§€ì—­" + "(" + line1 +") : ");
 				break;
 			case 2:
-				System.out.print("[System] ±â°£" + "(" + line1 +") : ");
+				System.out.print("[System] ê¸°ê°„" + "(" + line1 +") : ");
 				break;
 			case 3:
-				System.out.print("[System] ±â¾÷" + "(" + line1 +") : ");
+				System.out.print("[System] ê¸°ì—…" + "(" + line1 +") : ");
 				break;
 			}
 			for(Object object : Intern) {
