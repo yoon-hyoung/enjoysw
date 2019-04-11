@@ -1,5 +1,4 @@
 package internship_apply_UI;
-
 import Foundation.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,8 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-
-
 
 public class Login {
 
@@ -31,26 +28,27 @@ public class Login {
 		BufferedReader bufreader;
 		Scanner input = new Scanner(System.in);
 		String cnt;
-
 		String inputID; // 사용자로부터 입력받는 ID
 		String PW = null; // 파일 내에서 읽는 비밀번호
 		String inputPW; // 사용자로부터 입력받는 PW
-		boolean loop = true;
-		
+		boolean loop = true;		
 		boolean loop2 = true;
 
 		while(loop) {
-			System.out.print("\n┌───────────────────────────────────────┐\n");
+			System.out.print("┌───────────────────────────────────────┐\n");
 			System.out.printf("%65s\n", "★ 화목한 소설 팀 (7조) ^0^★ ");
 			System.out.printf("%60s\n", "★★ 해외인턴쉽 신청 시스템 ★★");
 			System.out.print("└───────────────────────────────────────┘\n");
 			System.out.printf("%45s","[안내] 프로그램을 종료하시려면 X 를 입력하세요.\n");
 			System.out.print("====================================================================\n");
 			System.out.print("▶▶  [학생로그인 : 0 입력]  [직원로그인 : 1 입력] >>>> ");
-			cnt = input.next();
 			
-			if(cnt.equals("X")) System.exit(0);
-			
+			cnt = input.next(); // 로그인 옵션 input
+			if(cnt.equals("X")||cnt.equals("x")) System.exit(0); 
+			if(!cnt.equals("1")&&!cnt.equals("0")) {
+				System.out.println("\n다시 입력하세요 "); 
+				continue;
+			} //예외처리 
 			setLogin_status(Integer.parseInt(cnt));
 			
 			if (login_status == 0) // 학생로그인일 경우
@@ -66,9 +64,9 @@ public class Login {
 					
 					/*   home으로 되돌아가는 코드(공통)   */
 					if(inputID.equals("X")) break;
-					/*        /////////////       */
+					/*        /////////////       */ // # 왜함? 
 					
-					file = new File("./login_info/"+inputID+".txt");// login_info 디렉토리 밑의 ID.txt를 읽는다.
+					file = new File("./src/login_info/"+inputID+".txt");// login_info 디렉토리 밑의 ID.txt를 읽는다.
 					try {
 						filereader = new FileReader(file);
 					} catch (FileNotFoundException e) {
@@ -117,29 +115,11 @@ public class Login {
 						}
 						else {
 							System.out.print("\n[Loading] ■");
-							Thread.sleep(100);
-							System.out.print("■");
-							Thread.sleep(100);
-							System.out.print("■");
-							Thread.sleep(100);
-							System.out.print("■");
-							Thread.sleep(100);
-							System.out.print("■");
-							Thread.sleep(80);
-							System.out.print("■");
-							Thread.sleep(80);
-							System.out.print("■");
-							Thread.sleep(70);
-							System.out.print("■");
-							Thread.sleep(60);
-							System.out.print("■");
-							Thread.sleep(50);
-							System.out.print("■");
-							Thread.sleep(40);
-							System.out.print("■");
-							Thread.sleep(30);
+							for(int i=0;i<10;i++) {
+								Thread.sleep(80);
+								System.out.print("■");
+							}
 							System.out.println(" - [100%] \n");
-							
 							System.out.println("[System] 로그인에 성공하였습니다. " + inputID +"님 환영합니다!");
 							main.setID(inputID); // ID 넘겨주기
 							main.setStatus(0); // status 넘겨주기
@@ -164,7 +144,7 @@ public class Login {
 					
 					/*   home으로 되돌아가는 코드(공통)   */
 					if(inputID.equals("X")) break;
-					/*        /////////////       */
+					/*        /////////////       */ //#
 					
 					file = new File("./login_info/"+inputID+".txt");// login_info 디렉토리 밑의 ID.txt를 읽는다.
 					try {
@@ -186,13 +166,10 @@ public class Login {
 						System.err.print("[System] 등록된 내용이 없습니다. ");
 						System.exit(1);
 					} // 파일 내에서 student인지, admin인지 다시 한번 첫 줄로부터 받는다.
-
-
 					if ( !job.equals("admin") ) {
 						System.out.println("관리자로 등록된 ID가 아닙니다.");
 						continue;
 					}
-
 					else { // 파일 내에서 다시 한 번 관리자임이 확인되었으면
 						try {
 							PW = bufreader.readLine();
@@ -207,7 +184,7 @@ public class Login {
 						
 						/*   home으로 되돌아가는 코드(공통)   */
 						if(inputPW.equals("h")) break;
-						/*        /////////////       */
+						/*        /////////////       */ // #왜 한거임? 
 
 						if ( !inputPW.equals(PW) ) { // 파일에 등록된 비밀번호와 같으면
 							System.out.print("[System] 비밀번호가 틀립니다. 다시 ID 재입력을 요청합니다.\n");
@@ -215,9 +192,11 @@ public class Login {
 						}
 						else {
 							System.out.print("\n[Loading] ■");
-							Thread.sleep(100);
-							System.out.print("■");
-							Thread.sleep(100);
+							for(int i=0;i<10;i++) {
+								Thread.sleep(80);
+								System.out.print("■");
+							}
+							/*Thread.sleep(100);
 							System.out.print("■");
 							Thread.sleep(100);
 							System.out.print("■");
@@ -235,7 +214,7 @@ public class Login {
 							System.out.print("■");
 							Thread.sleep(40);
 							System.out.print("■");
-							Thread.sleep(30);
+							Thread.sleep(30);*/
 							System.out.println(" - [100%] \n");
 							System.out.println("[System] 로그인에 성공하였습니다. 관리자 모드를 시작합니다.");
 							main.setID(inputID); // ID 넘겨주기
@@ -243,16 +222,10 @@ public class Login {
 							loop = false;
 							loop2 = false;
 						}
-
 					}
 				}
-				
-				
 			}
-
-
 		}
-
 	} // end login_execute()
 
 }
