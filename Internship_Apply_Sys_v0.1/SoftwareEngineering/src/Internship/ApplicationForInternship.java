@@ -53,7 +53,7 @@ public class ApplicationForInternship {
 	}
 	// apply함수를 이용해 file system 에등록
 	public void cancel() { 
-	
+		
 		File dir = new File("./Student/"+studentID+"/"+"AppliedInternship/"+internship);
 		if(dir.exists()==true) {
 			dir.delete(); // 경로에서 삭제한다.

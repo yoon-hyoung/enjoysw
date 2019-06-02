@@ -14,20 +14,7 @@ public class Document {
 	private String type;
 	private String destination;
 	// type : internship, student  destination : 세부폴더
-	
-	public Document(String type, String destination) { 
-		this.type=type;
-		this.destination=destination;
-		
-		String path="./" + type + "/" + destination + "/Document" ;
-		File docuDir = new File(path);
-		String[] fileList = docuDir.list();
-		int i; //iterator
-		
-		for(i=0;i<fileList.length;i++) {
-			this.docuList.add(fileList[i]);
-		}
-	}
+
 	
 	public ArrayList GetdocuList() {
 		return this.docuList;
@@ -40,6 +27,7 @@ public class Document {
 		File docuDir = new File(path);
 		String[] fileList = docuDir.list();
 		int i; //iterator
+		docuList= new ArrayList();
 		
 		for(i=0;i<fileList.length;i++) {
 			this.docuList.add(fileList[i]);
@@ -47,23 +35,42 @@ public class Document {
 		
 	}
 	
+	//get set 함수
+	
+	public Document(String type, String destination) { 
+		this.type=type;
+		this.destination=destination;
+		
+		String path="./" + type + "/" + destination + "/Document" ;
+		File docuDir = new File(path);
+		
+	    if(docuDir.exists()==false)
+	    {docuDir.mkdirs();}
+	    // docu 는 review 와 같이 internship 이 등록 될 때 새로 만들어 질 수 있으므로 constructor 에 디렉토리생성
+		String[] fileList = docuDir.list();
+		int i; //iterator
+		
+		for(i=0;i<fileList.length;i++) {
+			this.docuList.add(fileList[i]);
+		}
+	}
+	//constructor
 
-	public void AddDocument(String docuList,String inFileName,String outFileName) { //파일등록
-		this.docuList.add(docuList);
-		fileCopy(inFileName,outFileName);
+	public void AddDocument(String inFileName,String outFileName) { 
+		String path="./" + type + "/" + destination + "/Document" ;//파일등록
+		this.docuList.add(outFileName);
+		fileCopy(inFileName,path+"/"+outFileName+".txt");
 	}
 	
 	public void DelDocument(String del_file) { //파일삭제
-	//	Scanner input1 = new Scanner(System.in, "euc-kr");
-	//	System.out.print("삭제할 서류이름을 입력하시오 >> ");
-	//	String filename = input1.nextLine();
+
 		String path="./" + type + "/" + destination + "/Document" ;
 		
-		fileDelete(path + "/" + del_file);
+		fileDelete(path + "/" + del_file+".txt");
 		this.docuList.remove(del_file);
 		
 	}
-	
+	//추가 삭제
 	public static void fileDelete(String deleteFileName) { 
 		  File I = new File(deleteFileName);
 		  I.delete();
@@ -86,11 +93,11 @@ public class Document {
 		   e.printStackTrace();
 		  }
 		 }
-	
-	public void PrintDocumentList(String type, String destination) {
+	// file 관련함수
+	public void PrintDocumentList() {
 		SetList();
 		System.out.println(this.docuList);
 	}
-
+	//print
 	
 }

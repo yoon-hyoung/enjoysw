@@ -13,17 +13,16 @@ import Document.Document;
 
 public class Internship {
 	String name;
-	int date;
+	String date;
 	String company;
 	String period;
-	String rec_date;
+	String select_date;
 	String select_num;
-	String nation;
+	String region;
 	String major;
-	String host;
-	Document Document_list=null;
-	LastPassCondition Condition=null;
-	Review review_list=null;
+
+	Document Docu;
+	Review review;
 	
 	
 	public Internship(String Filename) {
@@ -46,7 +45,7 @@ public class Internship {
 						return ;
 					};
 					
-					if((date=Integer.parseInt(r_buffer.readLine()))<0) {
+					if((date=r_buffer.readLine())==null) {
 						System.out.println("날짜가 제대로 입력되지 않았습니다.제대로 입력 후 다시 하십시오.");
 						r_buffer.close();
 						return ;
@@ -63,7 +62,7 @@ public class Internship {
 						return ;
 					}
 					
-					if((rec_date=r_buffer.readLine())==null) {
+					if((select_date=r_buffer.readLine())==null) {
 						System.out.println("선발날짜가 제대로 입력되지 않았습니다.제대로 입력 후 다시 하십시오.");
 						r_buffer.close();
 						return ;
@@ -74,8 +73,8 @@ public class Internship {
 						return ;
 					}
 					
-					if((nation=r_buffer.readLine())==null) {
-						System.out.println("나라가 제대로 입력되지 않았습니다.제대로 입력 후 다시 하십시오.");
+					if((region=r_buffer.readLine())==null) {
+						System.out.println("지역이 제대로 입력되지 않았습니다.제대로 입력 후 다시 하십시오.");
 						r_buffer.close();
 						return ;
 					}
@@ -86,14 +85,9 @@ public class Internship {
 						return ;
 					}
 					
-					if((host=r_buffer.readLine())==null) {	
-						System.out.println("호스트가 제대로 입력되지 않았습니다.제대로 입력 후 다시 하십시오.");
-						r_buffer.close();
-						return ;
-					}
 					r_buffer.close();
-					
-					
+					review=new Review(name);
+					Docu=new Document("Internship", this.name);
 					
 				}
 				catch(FileNotFoundException e) {
@@ -104,36 +98,16 @@ public class Internship {
 				}
 					
 			}
+			
 		
 		
 	}
-	
-	
-	public void printAll() {
-		System.out.printf(" %s / %d / %s / %s / %s / %s / %s / %s / %s\n",
-		name,date,company,
-		period,rec_date,select_num,
-		nation,major,host);
-		return ;
-		
-	}
-	public void printname() {
-		
-		System.out.println(name);
-		return ;
-	}
-	
-	public void setCondition(LastPassCondition condition) {
-		this.Condition=condition;
-		
-	}
-	
+	//constructor
 	public void setname(String name) {
 		this.name=name;
 		return ;
-		
 	}
-	public void setdate(int date) {
+	public void setdate(String date) {
 		this.date=date;
 		return ;
 	}
@@ -146,30 +120,21 @@ public class Internship {
 		this.period=period;
 		return ;
 	}
-	public void setrec_date(String rec_date) {
-		this.rec_date=rec_date;
+	public void setrec_date(String select_date) {
+		this.select_date=select_date;
 		return ;
 	}
 	public void setselect_num(String select_num) {
 		this.select_num=select_num;
 		return ;
 	}
-	public void setnation(String nation) {
-		this.nation=nation;
+	public void setnation(String region) {
+		this.region=region;
 		return ;
 	}
 	public void setmajor(String major) {
 		this.major=major;
 		return ;
-	}
-	public void sethost(String host) {
-		this.host=host;
-		return ;
-	}
-	
-	public LastPassCondition getCondition() {
-		return Condition;
-		
 	}
 	
 	public String getname() {
@@ -177,7 +142,7 @@ public class Internship {
 		return name;
 		
 	}
-	public int getdate() {
+	public String getdate() {
 		return date;
 	}
 	public String getcompany() {
@@ -188,20 +153,41 @@ public class Internship {
 		return period;
 	}
 	public String getrec_date() {
-		return rec_date;
+		return select_date;
 	}
 	public String getselect_num() {
 		return select_num;
 	}
-	public String getnation() {
-		return nation;
+	public String getregion() {
+		return region;
 		
 	}
 	public String getmajor() {
 		return major;
 	}
-	public String gethost() {
-		return host;
+	public Review getreview() {
+		return review;
 	}
+	public Document getDocu() {
+		return Docu;
+	}
+	//get set
+	public void printAll() {
+		System.out.printf(" %s / %s / %s / %s / %s / %s / %s / %s \n",
+		name,date,company,
+		period,select_date,select_num,
+		region,major);
+		return ;
+		
+	}
+	public void printname() {
+		
+		System.out.println(name);
+		return ;
+	}
+	
+
+	
+	//print 함수
 
 }
