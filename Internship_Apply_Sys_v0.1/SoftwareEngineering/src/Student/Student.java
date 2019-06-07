@@ -97,11 +97,14 @@ public class Student {
 	/* * * * Getter & Setter * * * */
 	
 	public Student(String ID) throws IOException { //개인정보 등록  constructor 로 다시만들기// docu 부터 다시만들기
+		
 		File infofile; // student info 가 들어있는 txt file
 		FileReader filereader = null;
 		BufferedReader bufreader;
 		File applydir; //apply internship 의 directory
 		int i; // applylist 의 값을 setapplylist 함수로 현재 클래스의 member에 값을 집어넣기 위해 사용
+		
+		
 		
 		setID(ID); //입력받은 ID 를 기준으로 Student 객체 생성
 		infofile = new File("./Student/"+ID+"/info.txt");// Student/ID 디렉토리의 info.txt를 불러온다.
@@ -112,6 +115,7 @@ public class Student {
 			System.out.print("[System] 등록되지 않은 사용자입니다. \n");
 		}
 		// 입력 스트림 생성
+		
 		
 		bufreader = new BufferedReader(filereader); // 입력 버퍼 생성
 		setName(bufreader.readLine());

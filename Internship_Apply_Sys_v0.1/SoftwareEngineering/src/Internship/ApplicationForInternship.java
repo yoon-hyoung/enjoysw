@@ -31,7 +31,6 @@ public class ApplicationForInternship {
 	public void apply() { //+ 인턴쉽 지원하기( set file )
 		Document docu = new Document("Student", this.studentID);//Document 부분수정
 		File applydir = new File("./Student/"+studentID+"/"+"AppliedInternship");
-		Scanner input = new Scanner(System.in);
 		
 		if(applydir.exists() == false) {
 			applydir.mkdir(); 
