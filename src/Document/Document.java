@@ -6,81 +6,72 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Document {
 
-	String path;
-	ArrayList list = new ArrayList();
+public class Document {
 	
-	public Document() {
-		this.path = null;
+	private ArrayList docuList = new ArrayList();
+	
+	private String type;
+	private String destination;
+	// type : internship, student  destination : 세부폴더
+
+	
+	public ArrayList GetdocuList() {
+		return this.docuList;
 	}
 	
-	public Document(String Definition, String name) {
-		this.path = "." + "/" + Definition + "/" + name + "/" + "Document" ;
-	}
-	
-	public ArrayList GetList() {
-		return this.list;
-	}
-	
-	public void SetList() {
-		this.list = new ArrayList();
-		File folder = new File(this.path);
-		File[] list = folder.listFiles();
-		for(File file : list) {
-			this.list.add(file.getName());
-		}
-	}
-	public void NonRegistDocument(String Internship) {
-		SetList();
-		String InternPath = "." + "/" + "Internship" + "/" + Internship + "/" + "Document" ;
-		File folder = new File(InternPath);
-		ArrayList InternDocu = new ArrayList();
-		File[] list = folder.listFiles();
-		for(File file : list) {
-			if(file.isFile())
-				InternDocu.add(file.getName());
-		}
+	public void SetList() { //파일에서 set 하는것, 다 읽어오는것.
 		
-		for(Object sub : this.list){
-		for(Object object : InternDocu) {	
-				if(((String)sub).equals((String)object)) {
-					InternDocu.remove(object);
-					break;
-				}
-			}
+		
+		String path="./" + type + "/" + destination + "/Document" ;
+		File docuDir = new File(path);
+		String[] fileList = docuDir.list();
+		int i; //iterator
+		docuList= new ArrayList();
+		
+		for(i=0;i<fileList.length;i++) {
+			this.docuList.add(fileList[i]);
 		}
-		System.out.println(InternDocu);
 		
 	}
 	
-	public void AddDocument() {
-		Scanner input1 = new Scanner(System.in);
-		Scanner input2 = new Scanner(System.in);
-		while(true) {
-		System.out.print("추가할 서류의 경로를 입력하시오 >> 종료시 <0>" );
-		System.out.println("\n 예시) c:/ User/user/내문서");
-		String filepath = input1.nextLine();
-		if(filepath.equals("0"))
-			return;
-		System.out.print("추가할 서류의 이름을 입력하시오 >> ");
-		String filename = input2.nextLine();
-		fileCopy(filepath + "\\" + filename, this.path + "\\" + filename);
-		this.list.add(filename);
-		System.out.println("서류등록이 완료되었습니다.");
+	//get set 함수
+	
+	public Document(String type, String destination) { 
+		this.type=type;
+		this.destination=destination;
+		
+		String path="./" + type + "/" + destination + "/Document" ;
+		File docuDir = new File(path);
+		
+	    if(docuDir.exists()==false)
+	    {docuDir.mkdirs();}
+	    // docu 는 review 와 같이 internship 이 등록 될 때 새로 만들어 질 수 있으므로 constructor 에 디렉토리생성
+		String[] fileList = docuDir.list();
+		int i; //iterator
+		
+		for(i=0;i<fileList.length;i++) {
+			this.docuList.add(fileList[i]);
 		}
 	}
-	
-	public void DelDocument() {
-		Scanner input1 = new Scanner(System.in, "euc-kr");
-		System.out.print("삭제할 서류이름을 입력하시오 >> ");
-		String filename = input1.nextLine();
-		fileDelete(this.path + "\\" + filename);
-		this.list.remove(filename);
-		System.out.println("서류 삭제가 완료되었습니다.");
+	//constructor
+
+	public void AddDocument(String inFileName,String outFileName) { 
+		String path="./" + type + "/" + destination + "/Document" ;//파일등록
+		this.docuList.add(outFileName);
+		fileCopy(inFileName,path+"/"+outFileName+".txt");
 	}
 	
-	public static void fileDelete(String deleteFileName) {
+	public void DelDocument(String del_file) { //파일삭제
+
+		String path="./" + type + "/" + destination + "/Document" ;
+		
+		fileDelete(path + "/" + del_file+".txt");
+		this.docuList.remove(del_file);
+		
+	}
+	//추가 삭제
+	public static void fileDelete(String deleteFileName) { 
 		  File I = new File(deleteFileName);
 		  I.delete();
 		 }
@@ -102,25 +93,11 @@ public class Document {
 		   e.printStackTrace();
 		  }
 		 }
-	
-	public void SetPath(String Definition, String name) {
-		this.path = "." + "/" + Definition + "/" + name + "/" + "Document" ;
-	}
-	
-	public String GetPath() {
-		return this.path;
-	}
-	
-	public void MakeStorage() {
-		File file = new File(this.path);
-		if(!file.exists())
-			file.mkdirs();
-	}
-	
+	// file 관련함수
 	public void PrintDocumentList() {
 		SetList();
-		System.out.println(this.list);
+		System.out.println(this.docuList);
 	}
-
+	//print
 	
 }
