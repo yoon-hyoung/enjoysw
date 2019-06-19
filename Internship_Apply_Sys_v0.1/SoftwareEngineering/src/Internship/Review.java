@@ -69,7 +69,7 @@ public class Review {
 	   }
    }
    
-   public void write_review(String writeReview)
+   public void write_review(String writeReview, String contents)
    {
 	 
       reviewName.add(writeReview);
@@ -79,7 +79,7 @@ public class Review {
        try{
           FileWriter fw = new FileWriter(path+"/"+writeReview+".txt");
           System.out.print("적을 내용을 입력하세요.\n");
-          context=input.nextLine();
+          context=contents;
           fw.write(context);
           fw.close();
        }catch(IOException e) {

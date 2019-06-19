@@ -14,7 +14,11 @@ public class Servermanagement {
 		int flag;
 		
 		Scanner input =new Scanner(System.in) ;
+		Login client_status;
+		client_status = new Login("jino1996","a1234");
+		System.out.print(client_status.getLogin_status());
 		
+		if(client_status.getLogin_status()==1) {
 		flag = input.nextInt();
 		
 		switch(flag) {
@@ -23,6 +27,9 @@ public class Servermanagement {
 			client[0].apply_internship("Google");
 			break;
 		case 2:
+		
+		}
+		
 		
 		}
 		

@@ -100,11 +100,11 @@ public class Student_Server {
 		
 	}
 	
-	public void write_review(String review_internship,String write_review_name) {
+	public void write_review(String review_internship,String write_review_name,String contents) {
 		int i;
 		for(i=0;i<internship.length;i++) {
 			if(review_internship.equals(internship[i].getname())) {
-				internship[i].getreview().write_review(write_review_name);
+				internship[i].getreview().write_review(write_review_name,contents);
 				break;
 			}
 		}
