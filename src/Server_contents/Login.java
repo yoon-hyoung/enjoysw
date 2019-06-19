@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Login {
 
-	private int login_status; // 값이 0이면 stduent, 1이면 staff로 정한다.
+	private int login_status; // 값이 0이면 student, 1이면 staff로 정한다.
 
 	public int getLogin_status() {
 		return login_status;
