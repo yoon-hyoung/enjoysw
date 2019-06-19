@@ -11,6 +11,7 @@ public class Servermanagement {
 	Staff_Server staff ;
 	Login login;
 	private String path;
+	int i=0;
 	
 	
 	public Servermanagement() throws IOException{
@@ -55,7 +56,8 @@ public class Servermanagement {
 			}
 			// Login ...
 			if(flag==1) {
-				student[0]=new Student_Server(ID);
+				student[i]=new Student_Server(ID);
+				i++;
 				break;
 			}
 			else if(flag==0){
