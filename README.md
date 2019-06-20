@@ -37,8 +37,13 @@ Ex)
 이라는 Interface가 나올 것인데
 
 1 을 입력하면 Student의 개인정보를 읽을 수 있는 메뉴를 제공하며
+
 2 를 입력하면 internship 신청과 취소 그리고 internship List를 print하는 메뉴를 제공한다 (신청, 취소 미구현)
+
 3 을 입력하면 Document 등록,삭제 그리고 현재 로그인한 student의 DocumentList를 print 하는 메뉴를 제공한다.(신청, 취소 미구현)
+
 4 를 입력하면 review List 출력, 리뷰작성, 리뷰 세부내용 구현 메뉴를 제공한다. ( 미구현 )
 
+
 해당 메뉴가 제공하는 기능 별 입력 값은 UI에서 제공한다.
+
